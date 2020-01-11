@@ -1,0 +1,10 @@
+{
+  "name": "gotd",
+  "version": 2,
+  "env": {
+    "GB_TOKEN": "@gb-token",
+    "GM_TOKEN": "@gm-token",
+    "DEV_BOT_ID": "@dev-bot-id",
+    "PROD_BOT_ID": "@prod-bot-id"
+  }
+}

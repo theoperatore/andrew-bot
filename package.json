@@ -1,0 +1,35 @@
+{
+  "name": "groupme-chat-bot",
+  "version": "1.0.0",
+  "description": "A next.js serverless app to handle chat message commands",
+  "main": "index.js",
+  "author": "Al Petersen <theoperatore@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.6",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "husky": "^4.0.6",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
