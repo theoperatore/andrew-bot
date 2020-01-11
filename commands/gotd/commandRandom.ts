@@ -3,7 +3,7 @@ import { platforms, Platform } from './giantBombPlatform-corpus';
 import { CommandError } from '../../lib';
 
 function createRoundRobin<T>(allItems: T[]): () => T {
-  let cacheIndex = 0;
+  let cacheIndex = Math.round(Math.random() * (allItems.length - 1));
   return () => {
     const item = { ...allItems[cacheIndex] };
     cacheIndex += 1;
