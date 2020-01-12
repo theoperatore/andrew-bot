@@ -97,6 +97,9 @@ export default function Index() {
       <div className="button">
         <button onClick={testHelp}>help</button>
       </div>
+      <div className="button">
+        <p>End testing commands.</p>
+      </div>
       <style jsx>
         {`
           .button {
