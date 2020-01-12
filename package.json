@@ -10,7 +10,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest --watch",
+    "test:ci": "jest"
   },
   "husky": {
     "hooks": {
@@ -24,6 +25,8 @@
     "@types/react-dom": "^16.9.4",
     "husky": "^4.0.6",
     "jest": "^24.9.0",
+    "nock": "^11.7.2",
+    "node-mocks-http": "^1.8.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "typescript": "^3.7.4"
