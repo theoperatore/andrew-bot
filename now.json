@@ -1,9 +1,6 @@
 {
   "name": "gotd",
   "version": 2,
-  "github": {
-    "silent": true
-  },
   "env": {
     "GB_TOKEN": "@gb-token",
     "GM_TOKEN": "@gm-token",
