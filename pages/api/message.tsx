@@ -1,8 +1,29 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+// import * as firebaseAdmin from 'firebase-admin';
 import { GroupMePostBody, GroupMeSender } from '../../lib/types';
 import { postToGroupme } from '../../lib/postToGroupme';
 import { Parser } from '../../parser';
 import { commandRandom, commandWhoami, commandDnd } from '../../commands';
+
+// const serviceAccount = JSON.parse(
+//   Buffer.from(process.env.GCLOUD_CREDENTIALS!, 'base64').toString('utf8')
+// );
+
+// firebaseAdmin.initializeApp({
+//   credential: firebaseAdmin.credential.cert(serviceAccount),
+//   databaseURL: 'https://gotd-cde0c.firebaseio.com',
+// });
+
+// const db = firebaseAdmin.firestore();
+// db.collection('logs')
+//   .get()
+//   .then(snapshot => {
+//     const dat = snapshot.docs.map(doc => {
+//       return doc.data();
+//     });
+
+//     console.log(dat);
+//   });
 
 // TODO: figure out how to map this better...
 // maybe these are just more env variables?
