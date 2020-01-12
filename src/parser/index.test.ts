@@ -1,4 +1,4 @@
-import { Parser } from './';
+import { Parser } from '.';
 
 const noop = () => Promise.resolve({ bot_id: '', text: '' });
 

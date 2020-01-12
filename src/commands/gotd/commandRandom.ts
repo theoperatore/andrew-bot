@@ -1,4 +1,5 @@
-import { Command } from '../..//lib/types';
+import fetch from 'isomorphic-unfetch';
+import { Command } from '../../lib/types';
 import { platforms, Platform } from './giantBombPlatform-corpus';
 import { CommandError } from '../../lib';
 

@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 // import * as firebaseAdmin from 'firebase-admin';
-import { GroupMePostBody, GroupMeSender } from '../../lib/types';
-import { postToGroupme } from '../../lib/postToGroupme';
-import { Parser } from '../../parser';
-import { commandRandom, commandWhoami, commandDnd } from '../../commands';
+import { GroupMePostBody, GroupMeSender } from '../../src/lib/types';
+import { postToGroupme } from '../../src/lib/postToGroupme';
+import { Parser } from '../../src/parser';
+import { commandRandom, commandWhoami, commandDnd } from '../../src/commands';
 
 // const serviceAccount = JSON.parse(
 //   Buffer.from(process.env.GCLOUD_CREDENTIALS!, 'base64').toString('utf8')
@@ -82,7 +82,13 @@ export default async function groupme(
       bot_id: botId,
       text: `Bzzzzrt! Failed dat command.`,
     });
+
+    // TODO: use morgan or winston or some other
+    // logging tool other than console.error
+    // when this is fixed, remove mock in
+    // jest.setup.js
     console.error('[error]', error);
+    return res.status(200).send('recovered from error');
   }
 
   return res.status(200).send('success');
