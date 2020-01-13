@@ -82,6 +82,26 @@ export default function Index() {
     }
   }
 
+  async function testTv() {
+    try {
+      const response = await fetch('/api/message', {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          group_id: '17602864',
+          sender_type: 'user',
+          text: '#tv',
+        }),
+      });
+
+      console.log(response.status, response.statusText);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <div>
       <h3>This is a chat bot</h3>
@@ -95,9 +115,11 @@ export default function Index() {
         <button onClick={testDnd}>dnd</button>
       </div>
       <div className="button">
+        <button onClick={testTv}>tv</button>
+      </div>
+      <div className="button">
         <button onClick={testHelp}>help</button>
       </div>
-      <p>Comming soon...The Movie Database integration!</p>
       <style jsx>
         {`
           .button {

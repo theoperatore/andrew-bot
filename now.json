@@ -4,6 +4,7 @@
   "env": {
     "GB_TOKEN": "@gb-token",
     "GM_TOKEN": "@gm-token",
+    "MD_TOKEN": "@md-token",
     "DEV_BOT_ID": "@dev-bot-id",
     "PROD_BOT_ID": "@prod-bot-id"
   }

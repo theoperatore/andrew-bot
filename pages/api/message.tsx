@@ -3,7 +3,12 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { GroupMePostBody, GroupMeSender } from '../../src/lib/types';
 import { postToGroupme } from '../../src/lib/postToGroupme';
 import { Parser } from '../../src/parser';
-import { commandRandom, commandWhoami, commandDnd } from '../../src/commands';
+import {
+  commandRandom,
+  commandWhoami,
+  commandDnd,
+  commandTv,
+} from '../../src/commands';
 
 // const serviceAccount = JSON.parse(
 //   Buffer.from(process.env.GCLOUD_CREDENTIALS!, 'base64').toString('utf8')
@@ -40,6 +45,7 @@ const parser = new Parser();
 parser.setCommand('gotd', '#gotd - get a round robin GotD', commandRandom);
 parser.setCommand('whoami', '#whoami - generate backstory', commandWhoami);
 parser.setCommand('dnd', '#dnd <term> - query Roll20 compendium', commandDnd);
+parser.setCommand('tv', '#tv <term> - search for a tv show', commandTv);
 parser.setCommand('help', '#help - show this message', async botId => {
   const helpText = `Available commands are:\n\`\`\`\n${parser.formatCommands()}\`\`\``;
   return {
