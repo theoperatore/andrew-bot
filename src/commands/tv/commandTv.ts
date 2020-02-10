@@ -82,14 +82,16 @@ export const commandTv: Command = async (botId, rawText) => {
 
   const date = formatDate(tvShow.first_air_date);
 
-  const desc =
-    tvShow.overview.length >= 500
-      ? tvShow.overview.substr(0, 500)
-      : tvShow.overview;
+  const desc = tvShow.overview;
+  const overflowText = `# ${name}\n# ${date}\n\n${desc}`;
+  const text =
+    overflowText.length >= 500
+      ? `${overflowText.substr(0, 490)}...`
+      : overflowText;
 
   return {
     bot_id: botId,
-    text: `# ${name}\n# ${date}\n\n${desc}`,
+    text,
     image: `https://image.tmdb.org/t/p/original${tvShow.poster_path}`,
   };
 };
